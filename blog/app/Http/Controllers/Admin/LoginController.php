@@ -21,7 +21,7 @@ class LoginController extends CommonController
             if($user->user_name != trim($input['user_name']) || Crypt::decrypt($user->user_pass) != $input['user_pass']){
                 return back()->with('msg','用户名或者密码错误');
             }
-            session(['user'=>$user]);//把用户信息存进session,用作以后页面的验证
+            session(['user'=>$user],time()*86400);//把用户信息存进session,用作以后页面的验证
             return redirect('admin/index');
         }
         else {

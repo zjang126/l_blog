@@ -42,7 +42,7 @@
                             </td>
                             <td>{{$v->art_view}}</td>
                             <td>{{$v->art_editor}}</td>
-                            <td>{{date('Y-m-d H:i:s',$v->art_time)}}</td>
+                            <td>{{date('Y-m-d',$v->art_time)}}</td>
                             <td>
                                 <a href="{{url('admin/article/'.$v->art_id.'/edit')}}">修改</a>
                                 <a href="javascript:;" onclick="delArt({{$v->art_id}})">删除</a>
@@ -80,9 +80,6 @@
                         layer.msg(data.msg, {icon: 5});
                     }
                 });
-//            layer.msg('的确很重要', {icon: 1});
-            }, function(){
-
             });
         }
     </script>

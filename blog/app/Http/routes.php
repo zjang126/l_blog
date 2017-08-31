@@ -21,7 +21,16 @@ Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Ad
 
     Route::post('cate/changeorder', 'CategoryController@changeOrder');
     Route::resource('category', 'CategoryController');//资源路由 分类
+
     Route::resource('article', 'ArticleController');//资源路由 文章
+
+    Route::post('links/changeorder', 'LinksController@changeOrder');
+    Route::resource('links', 'LinksController');//资源路由 友情链接
+
+    Route::post('navs/changeorder', 'NavsController@changeOrder');
+    Route::resource('navs', 'NavsController');//资源路由 自定义导航
+
+
 
     Route::any('upload', 'CommonController@upload'); //缩略图 文件上传
 
