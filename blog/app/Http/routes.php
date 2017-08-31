@@ -18,7 +18,6 @@ Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Ad
     Route::get('info', 'IndexController@info');
     Route::get('quit', 'LoginController@quit');
 
-
     Route::post('cate/changeorder', 'CategoryController@changeOrder');
     Route::resource('category', 'CategoryController');//资源路由 分类
 
@@ -30,7 +29,10 @@ Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Ad
     Route::post('navs/changeorder', 'NavsController@changeOrder');
     Route::resource('navs', 'NavsController');//资源路由 自定义导航
 
-
+    Route::post('config/changecontent', 'ConfigController@changeContent');//修改内容
+    Route::get('config/putfile', 'ConfigController@putFile');//配置项写入配置文件
+    Route::post('config/changeorder', 'ConfigController@changeOrder');
+    Route::resource('config', 'ConfigController');//资源路由 自定义导航
 
     Route::any('upload', 'CommonController@upload'); //缩略图 文件上传
 

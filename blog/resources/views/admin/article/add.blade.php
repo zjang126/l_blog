@@ -77,10 +77,9 @@
                                     },
                                     'swf'      : "{{asset('resources/org/uploadify/uploadify.swf')}}",
                                     'uploader' : "{{url('admin/upload')}}",
-                                    'onUploadSuccess' : function(file, data, response) {
+                                    'onUploadSuccess' : function(file, data) {
                                         $('input[name=art_thumb]').val(data);
                                         $('#art_thumb_img').attr('src','/'+data);
-//                                    alert(data);
                                     }
                                 });
                             });

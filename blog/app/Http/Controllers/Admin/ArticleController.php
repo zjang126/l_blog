@@ -20,7 +20,6 @@ class ArticleController extends CommonController
     //get.admin/article/create   添加文章
     public function create()
     {
-
         $data =(new Category)->tree();
         return view('admin.article.add',compact('data'));
     }
@@ -71,7 +70,10 @@ class ArticleController extends CommonController
     //delete.admin/article/{article} 删除单个文章 做个回收站？？
     public function destroy($art_id){
         $re=Article::where('art_id',$art_id)->delete();
+
         if($re){
+          //  $path=base_path().'uploads'.'$v';//上传图片路径
+          //  @unlink($path);//删除图片
             $data=[
                 'status'=>0,
                 'msg'=>'文章删除成功'

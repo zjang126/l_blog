@@ -1,4 +1,5 @@
 <?php return array (
-  'web_title' => NULL,
-  'web_count' => NULL,
+  'web_title' => 'lbog.net',
+  'web_count' => 'aa',
+  'test' => '1',
 );

@@ -22,10 +22,10 @@
     <!--头部 开始-->
     <div class="top_box">
         <div class="top_left">
-            <div class="logo">后台管理模板</div>
+            <div class="logo"><a href="{{url('admin/info')}}" target="main" ><font color="#f5f5f5">后台管理系统</font></a></div>
             <ul>
-                <li><a href="#" class="active">首页</a></li>
-                <li><a href="#">管理页</a></li>
+                <li><a href="{{url('/')}}" target="_blank" >前台首页</a></li>
+                <li><a href="{{url('admin/info')}}" target="main" class="active">管理页</a></li>
             </ul>
         </div>
         <div class="top_right">
@@ -70,7 +70,7 @@
 
     <!--底部 开始-->
     <div class="bottom_box">
-        CopyRight © 2015. Powered By <a href="http://www.houdunwang.com">http://www.houdunwang.com</a>.
+        CopyRight © 2015. Powered By <a href="#">http://www.xxxxx.com</a>.
     </div>
     <!--底部 结束-->
 
