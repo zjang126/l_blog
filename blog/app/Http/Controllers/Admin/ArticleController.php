@@ -14,7 +14,7 @@ class ArticleController extends CommonController
     public function index()
     {
         $data = Article::orderBy('art_id','desc')->paginate(10);
-       return view('admin.article.index',compact('data'));
+        return view('admin.article.index',compact('data'));
     }
 
     //get.admin/article/create   添加文章
@@ -69,11 +69,12 @@ class ArticleController extends CommonController
     }
     //delete.admin/article/{article} 删除单个文章 做个回收站？？
     public function destroy($art_id){
+        $v=Article::select()->find($art_id);
+        $v=$v['art_thumb'];
+        $path=base_path().'/'.$v;//上传图片路径
+        @unlink($path);//删除图片
         $re=Article::where('art_id',$art_id)->delete();
-
         if($re){
-          //  $path=base_path().'uploads'.'$v';//上传图片路径
-          //  @unlink($path);//删除图片
             $data=[
                 'status'=>0,
                 'msg'=>'文章删除成功'
