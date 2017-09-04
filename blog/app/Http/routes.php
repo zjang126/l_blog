@@ -5,7 +5,7 @@
 
 
     Route::get('/', 'Home\IndexController@index'  );
-    Route::get('/cate', 'Home\IndexController@cate'  );
+    Route::get('/cate/{cat_id}', 'Home\IndexController@cate'  );
     Route::get('/art', 'Home\IndexController@article'  );
 
 
