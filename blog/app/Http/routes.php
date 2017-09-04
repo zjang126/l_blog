@@ -4,9 +4,10 @@
 //如果自己手动重复载入，会导致session无法加载的情况  博客框架版本：Laravel Framework version 5.2.45
 
 
-Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'Home\IndexController@index'  );
+    Route::get('/cate', 'Home\IndexController@cate'  );
+    Route::get('/art', 'Home\IndexController@article'  );
+
 
     Route::any('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');

@@ -48,7 +48,7 @@
             <tr>
                 <th><i class="require">*</i> Url：</th>
                 <td>
-                    <input type="text" class="lg" name="nav_url" value="http://">
+                    <input type="text" class="lg" name="nav_url" value="https://">
                 </td>
             </tr>
             <tr>

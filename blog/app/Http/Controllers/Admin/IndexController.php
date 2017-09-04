@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Model\Navs;
 use App\Http\Model\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -12,7 +13,8 @@ class IndexController extends CommonController
 {
     //
     public function index(){
-        return view('admin.index');
+        $navs=Navs::all();
+        return view('admin.index',compact('navs'));
     }
     public function info(){
         return view('admin.info');
