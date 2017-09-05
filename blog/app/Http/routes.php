@@ -6,7 +6,7 @@
 
     Route::get('/', 'Home\IndexController@index'  );
     Route::get('/cate/{cat_id}', 'Home\IndexController@cate'  );
-    Route::get('/art', 'Home\IndexController@article'  );
+    Route::get('/a/{art_id}', 'Home\IndexController@article'  );
 
 
     Route::any('admin/login', 'Admin\LoginController@login');

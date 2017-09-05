@@ -1,16 +1,16 @@
 @extends('layouts.home')
 @section('info')
-    <title>{{$find->cate_name}} - {{Config::get('web.web_title')}}</title>
-    <meta name="keywords" content="{{$find->cate_keywords}}" />
-    <meta name="description" content="{{$find->cate_description}}" />
+    <title>{{$field->cate_name}} - {{Config::get('web.web_title')}}</title>
+    <meta name="keywords" content="{{$field->cate_keywords}}" />
+    <meta name="description" content="{{$field->cate_description}}" />
 @endsection
 @section('content')
     <article>
-        <h1 class="t_nav"><span>{{$find->cate_title}}</span><a href="{{url('/')}}" class="n1">网站首页</a><a href="{{url('cate/'.$find->cate_id)}}" class="n2">{{$find->cate_name}}</a></h1>
+        <h1 class="t_nav"><span>{{$field->cate_title}}</span><a href="{{url('/')}}" class="n1">网站首页</a><a href="{{url('cate/'.$field->cate_id)}}" class="n2">{{$field->cate_name}}</a></h1>
         <div class="newblog left">
             @foreach($data as $d)
             <h2>{{$d->art_title}}</h2>
-            <p class="dateview"><span>发布时间：{{date('Y-m-d H:i:s',$d->art_time)}}</span><span>作者：{{$d->art_author}}</span><span>分类：[<a href="{{url('cate/'.$find->cate_id)}}">{{$find->cate_name}}</a>]</span></p>
+            <p class="dateview"><span>发布时间：{{date('Y-m-d',$d->art_time)}}</span><span>作者：{{$d->art_author}}</span><span>分类：[<a href="{{url('cate/'.$field->cate_id)}}">{{$field->cate_name}}</a>]</span></p>
             <figure><img src="{{url($d->art_thumb)}}"></figure>
             <ul class="nlist">
                 <p>{{$d->art_description}}</p>

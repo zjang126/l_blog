@@ -67,6 +67,7 @@
                     @endforeach
                 </ul>
             </div>
+
         </aside>
     </article>
 @endsection
